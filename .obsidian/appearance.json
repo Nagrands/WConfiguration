@@ -1,0 +1,16 @@
+{
+  "accentColor": "#0f3299",
+  "cssTheme": "Border",
+  "interfaceFontFamily": "Inter",
+  "textFontFamily": "Inter",
+  "monospaceFontFamily": "JetBrains Mono",
+  "nativeMenus": false,
+  "translucency": true,
+  "showViewHeader": true,
+  "theme": "obsidian",
+  "baseFontSize": 18,
+  "baseFontSizeAction": true,
+  "enabledCssSnippets": [
+    "snippet"
+  ]
+}

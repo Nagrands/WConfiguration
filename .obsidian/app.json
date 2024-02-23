@@ -1,0 +1,22 @@
+{
+  "showLineNumber": false,
+  "spellcheck": false,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": ".//Setup/img",
+  "showUnsupportedFiles": true,
+  "showInlineTitle": true,
+  "defaultViewMode": "preview",
+  "promptDelete": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "strictLineBreaks": false,
+  "tabSize": 4,
+  "readableLineLength": true,
+  "livePreview": false
+}

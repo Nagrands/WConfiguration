@@ -1,0 +1,15 @@
+# Ignore files
+*.exe
+*.xml
+*.txt
+*.log
+.obsidian/workspace.json
+
+# Ignore folders
+.ssh
+logs
+Cursors
+Fonts
+Drivers
+Setup/Software/*
+Start Menu

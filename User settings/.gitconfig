@@ -1,0 +1,35 @@
+[core]
+	autocrlf = false
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=format:'%Y-%m-%d %H:%M:%S'
+	type = cat-file -t
+	dump = cat-file -p
+	
+	# Отображение списка измененных файлов в последнем коммите:
+	lastchanges = show --name-status HEAD
+
+	# Создать ветку и переключиться на нее
+    branchnew = "!f() { git checkout -b $1; }; f"
+
+	# Сравнение изменений между ветками
+	branchdiff = "!f() { git diff $1...$2; }; f"
+
+    # Слияние с переименованием ветки
+    merge-rename = "!f() { git checkout $1 && git merge $2 && git branch -m $2; }; f"
+
+    # Просмотр изменений в конкретном файле
+    filechanges = log -p -1 --follow -- $1
+
+    # Отмена последнего коммита, оставив изменения в рабочем каталоге
+    undo-commit = reset HEAD~1 --soft
+
+    # Поиск коммитов по сообщению
+    findcommit = log --all --grep
+[user]
+	name = username
+	email = localuser@local.com
