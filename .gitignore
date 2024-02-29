@@ -8,8 +8,13 @@
 # Ignore folders
 .ssh
 logs
+Drivers
 Cursors
 Fonts
-Drivers
 Setup/Software/*
 Start Menu
+
+# App
+my-electron-app
+node_modules
+win-unpacked

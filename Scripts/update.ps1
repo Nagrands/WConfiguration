@@ -40,8 +40,8 @@ function CloneOrUpdateRepository {
 }
 
 # Конфигурация
-$repo_url = "https://github.com/Nagrands/windows_config.git"
-$repo_dir = (Join-Path $PSScriptRoot "windows_config")
+$repo_url = "https://github.com/Nagrands/WConfiguration.git"
+$repo_dir = (Join-Path $PSScriptRoot "WConfiguration")
 $git_path = "git"  # Используем переменную окружения PATH для поиска Git
 $git_dir = ".git"  # Поддиректория Git
 

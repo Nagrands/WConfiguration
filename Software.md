@@ -1,6 +1,12 @@
-# Browsers
 
-## 1. Google Chrome
+> [!info] Software
+
+---
+# Browsers
+---
+
+
+## Google Chrome
 
 > [!tip] #chrome
 > ![[google_chrome.svg|soft]]
@@ -10,7 +16,7 @@
 > > [!info]- Установить (online)
 > > ![[ChromeSetup.exe]]
 
-## 2. Opera
+## Opera
 
 > [!tip] #opera
 > ![[opera.svg|soft]]
@@ -20,7 +26,7 @@
 > > [!info]- Установить (online)
 > > ![[OperaSetup.exe]]
 
-## 3. Firefox
+## Firefox
 
 > [!tip] #firefox
 > ![[firefox.svg|soft]]
@@ -30,7 +36,9 @@
 > > [!info]- Установить (online)
 > > ![[Firefox Installer.exe]]
 
+---
 # Development
+---
 
 ## Git
 
@@ -63,7 +71,9 @@
 > 
 > [Download](https://code.visualstudio.com)
 
+---
 # Media
+---
 
 ## K-Lite Codec Pack
 
@@ -73,7 +83,7 @@
 > 
 > [Download](https://www.codecguide.com/download_kl.htm)
 > > [!example]- Установить (offline)
-> > ![[K-Lite_Codec_Pack_1805_Standard.exe]]
+> > ![[K-Lite_Codec_Pack.exe]]
 
 ## OBS Studio
 
@@ -83,7 +93,9 @@
 > 
 > [Download](https://obsproject.com/)
 
+---
 # System Utilities
+---
 
 ## 7-Zip
 
@@ -105,7 +117,9 @@
 > > [!example]- Portable
 > > ![[rufus-4.4p.exe]]
 
+---
 # Torrent Clients
+---
 
 ## qBittorrent
 
@@ -115,7 +129,9 @@
 > 
 > [Download](https://www.qbittorrent.org/download)
 
+---
 # VPN
+---
 
 ## WireGuard
 
@@ -125,7 +141,9 @@
 > 
 > [Download](https://www.wireguard.com/install/)
 
+---
 # Miscellaneous
+---
 
 ## Power Toys
 
@@ -143,7 +161,9 @@
 > 
 > [Download](https://github.com/Ryochan7/DS4Windows/releases/)
 
+---
 # Redistributables
+---
 
 ## Visual C++
 > [!success] Redistributable Runtimes All-in-One
