@@ -3,9 +3,9 @@
 | Program | Version | Run |
 | ---: | :--- | :--: |
 | **[[#AIDA64 Extreme]]** | *7.00.6700* | ![[aida64.exe]] |
-| **[[#Autoruns]]** | *14.10* | ![[Autoruns64.exe]] |
+| **[[#Autoruns]]** | *14.11* | ![[Autoruns64.exe]] |
 | **[[#CPU-Z]]** | *2.09.0* | ![[cpuz_x64.exe]] |
-| **[[#Crystal Disk Info]]** | *9.2.1* | ![[DiskInfo64A.exe]] |
+| **[[#Crystal Disk Info]]** | *9.2.3* | ![[DiskInfo64A.exe]] |
 | **[[#GPU-Z]]** | *2.57.0* | ![[GPU-Z.exe]] |
 | **[[#HWiNFO]]** | *7.72-5355* | ![[HWiNFO64.exe]] |
 | **[[#HWMonitor]]** | *1.53.0* | ![[HWMonitor_x64.exe]] |

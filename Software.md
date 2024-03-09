@@ -82,7 +82,7 @@
 > Универсальный пакет кодеков (кодировщиков-декодировщиков) и утилит для просмотра и обработки аудио- и видеофайлов. В пакет входит большое число свободных (open-source), либо бесплатных (freeware) кодеков и утилит.
 > 
 > [Download](https://www.codecguide.com/download_kl.htm)
-> > [!example]- Установить (offline)
+> > [!example]- Установить (offline) Version 18.1.5 Standard
 > > ![[K-Lite_Codec_Pack.exe]]
 
 ## OBS Studio

@@ -11,5 +11,7 @@ img[alt*="soft"] {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 20%;
 }

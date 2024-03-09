@@ -2,8 +2,8 @@
 	.SYNOPSIS
 	Default preset file for "Sophia Script for Windows 11"
 
-	Version: v6.6.0
-	Date: 02.02.2024
+	Version: v6.6.2
+	Date: 06.03.2024
 
 	Copyright (c) 2014—2024 farag
 	Copyright (c) 2019—2024 farag & Inestic
@@ -27,7 +27,7 @@
 	.NOTES
 	Supported Windows 11 versions
 	Version: 23H2+
-	Builds: 22631.3085+
+	Builds: 22631.3235+
 	Editions: Home/Pro/Enterprise
 
 	.NOTES
@@ -69,7 +69,7 @@ param
 
 Clear-Host
 
-$Host.UI.RawUI.WindowTitle = "Sophia Script for Windows 11 v6.6.0 | Made with $([System.Char]::ConvertFromUtf32(0x1F497)) of Windows | $([System.Char]0x00A9) farag & Inestic, 2014$([System.Char]0x2013)2024"
+$Host.UI.RawUI.WindowTitle = "Sophia Script for Windows 11 v6.6.2 | Made with $([System.Char]::ConvertFromUtf32(0x1F497)) of Windows | $([System.Char]0x00A9) farag & Inestic, 2014$([System.Char]0x2013)2024"
 
 Remove-Module -Name Sophia -Force -ErrorAction Ignore
 Import-LocalizedData -BindingVariable Global:Localization -BaseDirectory $PSScriptRoot\Localizations -FileName Sophia
@@ -401,6 +401,14 @@ TaskbarSearch -Hide
 # Show the search box on the taskbar (default value)
 # Показать поле поиска на панели задач (значение по умолчанию)
 # TaskbarSearch -SearchBox
+
+# Hide search highlights
+# Скрыть главное в поиске
+SearchHighlights -Hide
+
+# Show search highlights (default value)
+# Показать главное в поиске (значение по умолчанию)
+# SearchHighlights -Show
 
 # Hide Copilot button on the taskbar
 # Скрыть кнопку Copilot с панели задач
@@ -923,11 +931,11 @@ RestartNotification -Show
 # Вручную изменять период активности для этого устройства на основе действий (значение по умолчанию)
 # ActiveHours -Manually
 
-# Do not get Windows updates as soon as they're available for your device (default value)
+# Do not get the latest updates as soon as they're available (default value)
 # Не получать последние обновления, как только они будут доступны (значение по умолчанию)
 #WindowsLatestUpdate -Disable
 
-# Get Windows updates as soon as they're available for your device
+# Get the latest updates as soon as they're available
 # Получайте последние обновления, как только они будут доступны
 # WindowsLatestUpdate -Enable
 
@@ -971,12 +979,12 @@ DefaultTerminalApp -WindowsTerminal
 InstallVCRedist
 
 <#
-	Install the latest .NET Desktop Runtime 6, 7 (x86/x64)
-	Установить последнюю версию .NET Desktop Runtime 6, 7 (x86/x64)
+	Install the latest .NET Desktop Runtime 6, 7, 8 x64
+	Установить последнюю версию .NET Desktop Runtime 6, 7, 8 x64
 
 	https://dotnet.microsoft.com/en-us/download/dotnet
 #>
-InstallDotNetRuntimes
+InstallDotNetRuntimes -Runtimes NET6x64, NET7x64, NET8x64
 
 # Enable proxying only blocked sites from the unified registry of Roskomnadzor. The function is applicable for Russia only
 # Включить проксирование только заблокированных сайтов из единого реестра Роскомнадзора. Функция применима только для России
@@ -1442,24 +1450,24 @@ Errors
 # SIG # Begin signature block
 # MIIbswYJKoZIhvcNAQcCoIIbpDCCG6ACAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCApBgu8Qulp4tDn
-# eu3+N/65nv/TsGRXNd1Y6BJJo1sgGqCCFgkwggL8MIIB5KADAgECAhBABvSBYnvK
-# qkVsTwCoPdgHMA0GCSqGSIb3DQEBCwUAMBYxFDASBgNVBAMMC1RlYW0gU29waGlh
-# MB4XDTI0MDIwMjIwMDEwMloXDTI2MDIwMjIwMTEwMVowFjEUMBIGA1UEAwwLVGVh
-# bSBTb3BoaWEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDiCboeFCle
-# HMNH/Oii5f/ukj7ZlDatKWDgNKxJ5jLqOqPfd5iTUixDJMalFtH0fJ6tUUVKFV1h
-# xlRplbBqUSooek22A31GShhtBlFa1ZWJpYN8xKpMG9joSGnbdV4Hunp6KkSnUrcf
-# aICOj3ZJsLOwZKm++8eSAYfpl5+SS5oTK7aVchE46/0qtRECXlTyXWy6MyGASrI2
-# JcSyc8fXrRKiXMAePVXpyYTuTTzeUGkv8K2shXJi8Qot0Z4IDUA9tRwt79t7fkdI
-# L5LdzQanNdy4zzPds+ObSf3KGG3W/ZW5vmoFDyX2Ld369DgC1/fE2ovlcZpseJGv
-# ETmmwUwVHSfdAgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggr
-# BgEFBQcDAzAdBgNVHQ4EFgQUbkTa4Df1mX5wuhYbJ0fv+eDIrbowDQYJKoZIhvcN
-# AQELBQADggEBAJbJdDq3LcH/8ghKyDq48ojz5tdfiy/vHhBRO2pbQd79yHwsFJ9a
-# A+h6AdXenpz9/SE+kqXgSChxWWK9UdAeWQfaTD0u0fyEJkDQGrrkJirRT7Iq1a23
-# D1b/FSb+oC6f0CxCXcuYH1N/VQKyBdPGOvaUVJwmx90gf8AIUKoAVseWl3j1Z2pp
-# 3tf0DWDIHHRMDPvfwXyhXvnXHbF5zGqjjzuz0/sccXNspi4dIZIqRFuIt5bA6D0A
-# dvv6Zej+r9uOjhkjO8Wd2fiZ8rGH50fRtXijOgEuFbe70BU10gcM5TthpEFVSDuL
-# 71smdZAe2yimc+XwS8Gbdi24fV7kUJLmfNUwggWNMIIEdaADAgECAhAOmxiO+dAt
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCAlHhNE2RtxzWn3
+# zk2d8SpL+w+PyAjmHLHqvBDvGXJfQaCCFgkwggL8MIIB5KADAgECAhBK+VzjbbRY
+# tUuudcRyNd4PMA0GCSqGSIb3DQEBCwUAMBYxFDASBgNVBAMMC1RlYW0gU29waGlh
+# MB4XDTI0MDMwNjIxMDcxOVoXDTI2MDMwNjIxMTcxNlowFjEUMBIGA1UEAwwLVGVh
+# bSBTb3BoaWEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7PNJLmjAq
+# spvW0yqObHHVfiLcTdkASJXMnAMLj1musPi6qViEIm/5Wu/i1P/4SotvsRmYzMg/
+# zp8WxHMbKsGardSLhBhCsms7F5QWb2GavqLtxekColUAzzwOEUCJq5iKr95QJILs
+# QwcP7pjSEat4ozTGKeP9BDUr4KEZiSDU1lV4uozFb0e8kX2EstHK/ZgL+4+kbyMu
+# bQPj4Sszm7m8ExdiF2/3ciVDc0YSkttHjZ170SeipLgDip1+5L5wLxBpxuvLCiJK
+# 03ihfVXG87zogSMrSy2gCWDdDAz++IvIfl3zIuf6ZYBe4ZfaBupNfd4/8hKOcXCZ
+# GHtSy73RCzqRAgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggr
+# BgEFBQcDAzAdBgNVHQ4EFgQU/L87UzRey/MqTSAP6+HdwHDfyMIwDQYJKoZIhvcN
+# AQELBQADggEBAI4oH5sVDHCNPMAjG7sxN//wANgPqN1LAuXhl6FBO6dW9tr5zo9I
+# zVnxowjxUxBJBw49GbHVE2svMMZ+5jgQNPpypBgrUnoU3vIo8C4faL8Bc21xM05k
+# 6sDiIMWnUUqL/kOpkKlGmjH/YBxgvVLp+3nZ+4CWnej80XW5zl2yg8Opiz3MqHwT
+# ItqdQ+swiFRSgz/LxC/WdVT8JPtbnOrNoK0oEP7/L32OgiuU5xmFNv9dzmJQ8af+
+# UGve2Po3ULTdpxTIcwCSUclngpXVNSmM2/uBdypVCApg8cPFZX5QcID/KxfPIH7w
+# wXBzITdsujYbSDO2OdiISldeBjPbjU5EUTwwggWNMIIEdaADAgECAhAOmxiO+dAt
 # 5+/bUOIIQBhaMA0GCSqGSIb3DQEBDAUAMGUxCzAJBgNVBAYTAlVTMRUwEwYDVQQK
 # EwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xJDAiBgNV
 # BAMTG0RpZ2lDZXJ0IEFzc3VyZWQgSUQgUm9vdCBDQTAeFw0yMjA4MDEwMDAwMDBa
@@ -1561,31 +1569,31 @@ Errors
 # /qTreWWqaNYiyjvrmoI1VygWy2nyMpqy0tg6uLFGhmu6F/3Ed2wVbK6rr3M66ElG
 # t9V/zLY4wNjsHPW2obhDLN9OTH0eaHDAdwrUAuBcYLso/zjlUlrWrBciI0707NMX
 # +1Br/wd3H3GXREHJuEbTbDJ8WC9nR2XlG3O2mflrLAZG70Ee8PBf4NvZrZCARK+A
-# EEGKMYIFADCCBPwCAQEwKjAWMRQwEgYDVQQDDAtUZWFtIFNvcGhpYQIQQAb0gWJ7
-# yqpFbE8AqD3YBzANBglghkgBZQMEAgEFAKCBhDAYBgorBgEEAYI3AgEMMQowCKAC
+# EEGKMYIFADCCBPwCAQEwKjAWMRQwEgYDVQQDDAtUZWFtIFNvcGhpYQIQSvlc4220
+# WLVLrnXEcjXeDzANBglghkgBZQMEAgEFAKCBhDAYBgorBgEEAYI3AgEMMQowCKAC
 # gAChAoAAMBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEEMBwGCisGAQQBgjcCAQsx
-# DjAMBgorBgEEAYI3AgEVMC8GCSqGSIb3DQEJBDEiBCDhcH2OXeK9HEUrZaNkMm/p
-# Z2e8cIfoK1WlG5dRXfET2TANBgkqhkiG9w0BAQEFAASCAQBjT6J1ILvl0z/DiH6C
-# N6WY+fRu8NHgvWm3w0maH0mMo9iWpYu5XPnM8bHBDuXlVjLTAHFGa+RUvYI/1ePm
-# wYSI3QcfN+YLqrnTN4oXtQ/y9ryeakzXK7HuinZbpxVp4EpS4AMxRy00TnNZeXlI
-# WvzvldTNMtnatFoOrwCTeAu4obGr4SZcrPlabwNh8lowp0tf21BoQfirp2hBo5Kh
-# R7TZuedFLlgSqFYLcBGYPUcikvujj80eyyM32L3hSGb6b233Td2BnkK59JlmWPzF
-# npu/PimtW4vdT20S9y2Y2pBFwhqarDIqSSi7SBqF+Zi2vquXdHpNpGCZ7mx06Wzf
-# KUsNoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkGA1UEBhMC
+# DjAMBgorBgEEAYI3AgEVMC8GCSqGSIb3DQEJBDEiBCBrHWP+Sff8IDQwk5pDc/5R
+# AxNN7XUqi27YPmedvfKJKjANBgkqhkiG9w0BAQEFAASCAQB6sLpayqsfI+J1zAA0
+# klj8G34/T40BAI6Ro6tUEH/AgrAlslRMBpatHUkCT8LxCZdWN/bshFbkVSpPXN5U
+# uEwUsjn+5f8bliJ6LChLi9c9f19qMfDhynmFyJMWyCe3hSo/3+q7BaR37Pvfn35w
+# aYuBaFtgzSaIRvzGMmy5nOfAVT1hOp0lEI80xCNy+4j8KBAnt9qg7xc2DALFhHf5
+# rD98obEnsV72uzBOCOJ98kKgG7OOXFCFnEBP6a/1/BgFk2Ll/IudfmwYYTDDcduB
+# oy0W5G/sPVIswd7hgY2hKGgNzu66JEFOzrPOAUCGJBYuMKo3Wvt4jb1NByKqicS5
+# yRBdoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkGA1UEBhMC
 # VVMxFzAVBgNVBAoTDkRpZ2lDZXJ0LCBJbmMuMTswOQYDVQQDEzJEaWdpQ2VydCBU
 # cnVzdGVkIEc0IFJTQTQwOTYgU0hBMjU2IFRpbWVTdGFtcGluZyBDQQIQBUSv85Sd
 # CDmmv9s/X+VhFjANBglghkgBZQMEAgEFAKBpMBgGCSqGSIb3DQEJAzELBgkqhkiG
-# 9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDIwMjIwMTEwOFowLwYJKoZIhvcNAQkE
-# MSIEIFzxQ7HIvuMutxzxZC6PrP26dPk/5+OKWRmD7XVAaUblMA0GCSqGSIb3DQEB
-# AQUABIICABr98lSAxTd51Jzt22R+vRCGd60PBmGl9zv3bbXdKO/jU3iHairj5KHi
-# NQfvzcuuswhdGO+Hv6b6s2RL0zRqxfoU+z71/vD1YSJ4kwo9w1cREBydiAEGZmYS
-# j6IALgnzbE38Bze7NxHUDlWqcSZaDwlJUkDtJqLyDNBb14BcQAXKXWB4Q1sKMgDc
-# KhFOP6Tiru8odURU15WWgTqAwQ/iYhFPLrLp30MLTIvpOMDYe2ZPDvcQ5U63HEtC
-# f5Ty3Um8XpLz96tPb4w1ljn8UaW9e2qP7lqxidplmA5AUuWXuXz3C3IY3M2KLlY8
-# TK/3fusIDaryEo/D51NlrPiZuEWFCjJQr9ugyUbUn4VYz+vN+TKgDWrJalOcs4DK
-# WnR9CvGTTTkKDSfjZCEVCtCL2C/1EwqT23v6odl7eV9O1l22EyFjHybUt9HwBvI1
-# 49taGHqbUhpATo12KJb18M53s6OimD7Tk9bJMasnGKC3o38HgHlqXUK6FafTTzsR
-# iNpJ2x+6g5lhbm6SOcCXCOSeoAsgFYgr/nOTssw/a49zm5ukHXGhrRgvARa/R7R/
-# p8dhHXx/x3npRJzm1iQsl3qjheoHfAGb+lEokyWvYAXhZsYInFJbHtdTqfnWzi30
-# M0F9/Ic/XtP6kh9VaTOoUpXb5GoZm9On0P0Jexqc+gVWykIRrFrb
+# 9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDMwNjIxMTcyNVowLwYJKoZIhvcNAQkE
+# MSIEIHt6XOYllWU2043vPaj4ubTaVf20aTSay+rykz0Gg5nOMA0GCSqGSIb3DQEB
+# AQUABIICAAUFtpUmt2uVLyisLRnFLwwK4v8Veevq+D22Xbf3zI0UZWt4KAEnG2mg
+# jwj3MKUitaneBtHlFgfkv6rl1CBte8TCfjRWjmNGu+YIlaj+78vzhGcePzLMxTE6
+# nM/s746NB/lcYL1neFYwlPY8v4MVc3bcu9HeRlH560TAZB8wpDQ5/eDhyNDqYHjD
+# ZEqr1iLxwz4ZBjOtOtAI1jgxPHh173rqqiI+RL/Xq9acXuNQ+WZkr8/zQAz96BOR
+# hcLpjlhY9LbfnjnVushtFzeaIvdZwKxi7W/bGbaoGHHn0vP+b9YLlYIFjhRv19wt
+# FfaoYZ7Z6RVx1tsIBU+bPPFlbVholzV4EMInCgbncKMLREQNmqxmpCCTE53buQQN
+# EOcNkDQLiLbSldENPDWjCHG8/Gj6kWzph4d2I/tyJE7y8L5Iu6lCZ1FZuMVS03HY
+# sY/XEaTWX5aVbTFKdEdSwY7VE391RGtkbLK1qMcprRGNQDwwmWIn9JesM8sUnqaT
+# LxUOTWdVzokDIyQThCDraE0X8H5NzsXCmYYcT+TBsNpcHD4yCgtrQ/hjSpsyqBpd
+# Hewlfixp1mBoCZPC3e4hBaP5hLhZzH2xQIpCKiKO5XJnwoX3W6tnF0gNH/ghRklC
+# BeCdFHKoJngLiPxa6NV21hLFdavdMiW52/gYOCJqXhtXfxozvh3V
 # SIG # End signature block

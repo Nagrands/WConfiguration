@@ -140,8 +140,8 @@
 
 | <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" height="30px"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" height="30px"/> |
 | :--: | :--: |
-| v5.18.0 | v6.6.0 |
-| ![[Scripts/Sophia Script/w10/v5.18.0/Sophia.ps1]] | ![[Scripts/Sophia Script/w11/v6.6.0/Sophia.ps1]] |
+| v5.18.2 | v6.6.2 |
+| ![[Scripts/Sophia Script/w10/v5.18.2/Sophia.ps1]] | ![[Scripts/Sophia Script/w11/v6.6.2/Sophia.ps1]] |
 
 #### Запуск скрипта
 

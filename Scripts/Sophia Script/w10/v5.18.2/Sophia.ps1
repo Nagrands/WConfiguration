@@ -2,8 +2,8 @@
 	.SYNOPSIS
 	Default preset file for "Sophia Script for Windows 10"
 
-	Version: v5.18.0
-	Date: 02.02.2024
+	Version: v5.18.2
+	Date: 06.03.2024
 
 	Copyright (c) 2014—2024 farag
 	Copyright (c) 2019—2024 farag & Inestic
@@ -27,7 +27,7 @@
 	.NOTES
 	Supported Windows 10 versions
 	Version: 22H2
-	Builds: 19045.3996+
+	Builds: 19045.4123+
 	Editions: Home/Pro/Enterprise
 	Architecture: x64
 
@@ -70,7 +70,7 @@ param
 
 Clear-Host
 
-$Host.UI.RawUI.WindowTitle = "Sophia Script for Windows 10 v5.18.0 | Made with $([System.Char]::ConvertFromUtf32(0x1F497)) of Windows | $([System.Char]0x00A9) farag & Inestic, 2014$([System.Char]0x2013)2024"
+$Host.UI.RawUI.WindowTitle = "Sophia Script for Windows 10 v5.18.2 | Made with $([System.Char]::ConvertFromUtf32(0x1F497)) of Windows | $([System.Char]0x00A9) farag & Inestic, 2014$([System.Char]0x2013)2024"
 
 Remove-Module -Name Sophia -Force -ErrorAction Ignore
 Import-LocalizedData -BindingVariable Global:Localization -BaseDirectory $PSScriptRoot\Localizations -FileName Sophia
@@ -1007,12 +1007,12 @@ UninstallPCHealthCheck
 InstallVCRedist
 
 <#
-	Install the latest .NET Desktop Runtime 6, 7 (x86/x64)
-	Установить последнюю версию .NET Desktop Runtime 6, 7 (x86/x64)
+	Install the latest .NET Desktop Runtime 6, 7, 8 x64
+	Установить последнюю версию .NET Desktop Runtime 6, 7, 8 x64
 
 	https://dotnet.microsoft.com/en-us/download/dotnet
 #>
-InstallDotNetRuntimes
+InstallDotNetRuntimes -Runtimes NET6x64, NET7x64, NET8x64
 
 # Enable proxying only blocked sites from the unified registry of Roskomnadzor. The function is applicable for Russia only
 # Включить проксирование только заблокированных сайтов из единого реестра Роскомнадзора. Функция применима только для России
@@ -1508,24 +1508,24 @@ Errors
 # SIG # Begin signature block
 # MIIbswYJKoZIhvcNAQcCoIIbpDCCG6ACAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCAg7d7tonfFw/K1
-# P/5q3wrFNBEHxOmmuV60laiTmZ7sKqCCFgkwggL8MIIB5KADAgECAhBABvSBYnvK
-# qkVsTwCoPdgHMA0GCSqGSIb3DQEBCwUAMBYxFDASBgNVBAMMC1RlYW0gU29waGlh
-# MB4XDTI0MDIwMjIwMDEwMloXDTI2MDIwMjIwMTEwMVowFjEUMBIGA1UEAwwLVGVh
-# bSBTb3BoaWEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDiCboeFCle
-# HMNH/Oii5f/ukj7ZlDatKWDgNKxJ5jLqOqPfd5iTUixDJMalFtH0fJ6tUUVKFV1h
-# xlRplbBqUSooek22A31GShhtBlFa1ZWJpYN8xKpMG9joSGnbdV4Hunp6KkSnUrcf
-# aICOj3ZJsLOwZKm++8eSAYfpl5+SS5oTK7aVchE46/0qtRECXlTyXWy6MyGASrI2
-# JcSyc8fXrRKiXMAePVXpyYTuTTzeUGkv8K2shXJi8Qot0Z4IDUA9tRwt79t7fkdI
-# L5LdzQanNdy4zzPds+ObSf3KGG3W/ZW5vmoFDyX2Ld369DgC1/fE2ovlcZpseJGv
-# ETmmwUwVHSfdAgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggr
-# BgEFBQcDAzAdBgNVHQ4EFgQUbkTa4Df1mX5wuhYbJ0fv+eDIrbowDQYJKoZIhvcN
-# AQELBQADggEBAJbJdDq3LcH/8ghKyDq48ojz5tdfiy/vHhBRO2pbQd79yHwsFJ9a
-# A+h6AdXenpz9/SE+kqXgSChxWWK9UdAeWQfaTD0u0fyEJkDQGrrkJirRT7Iq1a23
-# D1b/FSb+oC6f0CxCXcuYH1N/VQKyBdPGOvaUVJwmx90gf8AIUKoAVseWl3j1Z2pp
-# 3tf0DWDIHHRMDPvfwXyhXvnXHbF5zGqjjzuz0/sccXNspi4dIZIqRFuIt5bA6D0A
-# dvv6Zej+r9uOjhkjO8Wd2fiZ8rGH50fRtXijOgEuFbe70BU10gcM5TthpEFVSDuL
-# 71smdZAe2yimc+XwS8Gbdi24fV7kUJLmfNUwggWNMIIEdaADAgECAhAOmxiO+dAt
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCASVMRD/Lk6VjdR
+# ZaMC2c2jwbnV8J6og45dvPCGPGj456CCFgkwggL8MIIB5KADAgECAhBK+VzjbbRY
+# tUuudcRyNd4PMA0GCSqGSIb3DQEBCwUAMBYxFDASBgNVBAMMC1RlYW0gU29waGlh
+# MB4XDTI0MDMwNjIxMDcxOVoXDTI2MDMwNjIxMTcxNlowFjEUMBIGA1UEAwwLVGVh
+# bSBTb3BoaWEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7PNJLmjAq
+# spvW0yqObHHVfiLcTdkASJXMnAMLj1musPi6qViEIm/5Wu/i1P/4SotvsRmYzMg/
+# zp8WxHMbKsGardSLhBhCsms7F5QWb2GavqLtxekColUAzzwOEUCJq5iKr95QJILs
+# QwcP7pjSEat4ozTGKeP9BDUr4KEZiSDU1lV4uozFb0e8kX2EstHK/ZgL+4+kbyMu
+# bQPj4Sszm7m8ExdiF2/3ciVDc0YSkttHjZ170SeipLgDip1+5L5wLxBpxuvLCiJK
+# 03ihfVXG87zogSMrSy2gCWDdDAz++IvIfl3zIuf6ZYBe4ZfaBupNfd4/8hKOcXCZ
+# GHtSy73RCzqRAgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggr
+# BgEFBQcDAzAdBgNVHQ4EFgQU/L87UzRey/MqTSAP6+HdwHDfyMIwDQYJKoZIhvcN
+# AQELBQADggEBAI4oH5sVDHCNPMAjG7sxN//wANgPqN1LAuXhl6FBO6dW9tr5zo9I
+# zVnxowjxUxBJBw49GbHVE2svMMZ+5jgQNPpypBgrUnoU3vIo8C4faL8Bc21xM05k
+# 6sDiIMWnUUqL/kOpkKlGmjH/YBxgvVLp+3nZ+4CWnej80XW5zl2yg8Opiz3MqHwT
+# ItqdQ+swiFRSgz/LxC/WdVT8JPtbnOrNoK0oEP7/L32OgiuU5xmFNv9dzmJQ8af+
+# UGve2Po3ULTdpxTIcwCSUclngpXVNSmM2/uBdypVCApg8cPFZX5QcID/KxfPIH7w
+# wXBzITdsujYbSDO2OdiISldeBjPbjU5EUTwwggWNMIIEdaADAgECAhAOmxiO+dAt
 # 5+/bUOIIQBhaMA0GCSqGSIb3DQEBDAUAMGUxCzAJBgNVBAYTAlVTMRUwEwYDVQQK
 # EwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xJDAiBgNV
 # BAMTG0RpZ2lDZXJ0IEFzc3VyZWQgSUQgUm9vdCBDQTAeFw0yMjA4MDEwMDAwMDBa
@@ -1627,31 +1627,31 @@ Errors
 # /qTreWWqaNYiyjvrmoI1VygWy2nyMpqy0tg6uLFGhmu6F/3Ed2wVbK6rr3M66ElG
 # t9V/zLY4wNjsHPW2obhDLN9OTH0eaHDAdwrUAuBcYLso/zjlUlrWrBciI0707NMX
 # +1Br/wd3H3GXREHJuEbTbDJ8WC9nR2XlG3O2mflrLAZG70Ee8PBf4NvZrZCARK+A
-# EEGKMYIFADCCBPwCAQEwKjAWMRQwEgYDVQQDDAtUZWFtIFNvcGhpYQIQQAb0gWJ7
-# yqpFbE8AqD3YBzANBglghkgBZQMEAgEFAKCBhDAYBgorBgEEAYI3AgEMMQowCKAC
+# EEGKMYIFADCCBPwCAQEwKjAWMRQwEgYDVQQDDAtUZWFtIFNvcGhpYQIQSvlc4220
+# WLVLrnXEcjXeDzANBglghkgBZQMEAgEFAKCBhDAYBgorBgEEAYI3AgEMMQowCKAC
 # gAChAoAAMBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEEMBwGCisGAQQBgjcCAQsx
-# DjAMBgorBgEEAYI3AgEVMC8GCSqGSIb3DQEJBDEiBCCa4cUDHB1v68brggO0bufe
-# wjMK+/kxbN9hjZjS1vu+yzANBgkqhkiG9w0BAQEFAASCAQAR4VyAZwN6QZ9Z9Y4f
-# /NZKsCkUSNW4LtbnGsJJmgpeewNErMbQeXfkeOWIgoi7X7NMrez9pw8DQ9lR1AVh
-# hd4hgbKurKlzyAJZH0JpQK8MnTkL+RQxdHpriQVCfki9a8xVGomvrorqNc12T6gJ
-# jTlBHea3LcraiqSXABzhQb6p7IOd3dGc4SRqULrFPYVA5QLFiDFUg6td8RTz5qqQ
-# HbJpbSBGmsZHih2BueQYXmoEuS3l+0moATzY/xWNnoqd+pz8/3+gRGgrtBHUsf+q
-# 3ZshXPZ33e3aKp1WXrEhFtsdMT9SLiTle/atMQ6P6DTJSTcarvF7V/DkMmGE3sQb
-# /2dYoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkGA1UEBhMC
+# DjAMBgorBgEEAYI3AgEVMC8GCSqGSIb3DQEJBDEiBCCzEsRobhyEWEOHoP0+xhSL
+# U3qjQhmwL6DBl4pj1eLB1DANBgkqhkiG9w0BAQEFAASCAQBD/f/zMYISSurTvP8N
+# GmsdCnv+9tiGqp3V8yrCi+MyedhVO9oOLG2hugWj9xpVA0nus9AUNpJ3LpA01PO6
+# Wk44sQnbE3QDtcSKB0bbQoSXMRrg5vfJyKgqavkaUCbdqJ8xjn/wzbUvq5EHZ7zS
+# K4Ml/l7zilIUaUmvIuPpyK0XQvtBZjs3xo11+uuD/F6Mo+kI38NPMYTY5eBFEpnY
+# sY51wOneTZRixNZ38ElAUFogWRY+G7ZHGFITCEFcYyTBBpcU9DYI3VSVuzXLdmy5
+# MvLqafX7LXX0Ma/A3kqFIomcBQnkXIUVDAoPI0MHWHda19SxGCfFKsnOxxXW8yEl
+# QYUhoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkGA1UEBhMC
 # VVMxFzAVBgNVBAoTDkRpZ2lDZXJ0LCBJbmMuMTswOQYDVQQDEzJEaWdpQ2VydCBU
 # cnVzdGVkIEc0IFJTQTQwOTYgU0hBMjU2IFRpbWVTdGFtcGluZyBDQQIQBUSv85Sd
 # CDmmv9s/X+VhFjANBglghkgBZQMEAgEFAKBpMBgGCSqGSIb3DQEJAzELBgkqhkiG
-# 9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDIwMjIwMTEwNFowLwYJKoZIhvcNAQkE
-# MSIEIOTzRz1LstSTXt8H7YFn8uQCutQN5VWZ1kZBWulA2dsnMA0GCSqGSIb3DQEB
-# AQUABIICAH5W4gQDN7vH3FnjbqdQK39y58sX9oFbpxCin+l76633+c7RKAua212t
-# pSz4z76+mn8WYq+UlkUGa7cp9QwODBIbk5+VXWioe+52+MdODoMLWfoKHS3ZMUno
-# SLYvgYhaQyeIAlFCbY6L4TIl7rF2+xbRH9ZmpkTwJLVGJqfIdUmVTbWyXIqjfGRm
-# FM2Yhscry9AZDhNo6A8Jbhs4nzr4QXB3b2JS7dU2A9x34bhodO0huyoY3H2OOc82
-# 9OAoym68T+aO/heyNeTDoNT5qFJR41sJfJCj5z8rycCoG9LVYnsgdtuNivx1D+H1
-# 0488kVzkRDpgPAQjWUUonu+xn/6LvfwdXyLktITFNp7Kdo+ZKjHw89QzgtoQ1HWl
-# zZoL6f6Tilyu/5+CYmR/SuJhNMRVrcq6jUjjhzji0abkYyWOShfZINm4eZDhwGNh
-# aUfGUPGhX0Z+vMn8aCdvCZuKM07QkOhPMWZvrR0WDMJOi3mMbs5vAHF8/zm/y+kq
-# C0Fdv+NBZXwUnY8UsxRLiCBqVp3OvgrVzbVTr5gKZ4WVBfFJrkZxmaOOd9u5x7Fv
-# xHUd7sTjEQtftH6Pwl/M8IPkN+Fl02uqCdgaAOYszlytxaA1itgNWNoM2c2klZRe
-# Y/bM8fH4ih8+71IXcM5OeNLu/5nh6gzhAE9GRRB5o/JKaRioUHtf
+# 9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDMwNjIxMTcxOVowLwYJKoZIhvcNAQkE
+# MSIEIPqS2KH+AstxKxsCQzCMhHIGyfyWQ14EAMMj+4S+88+BMA0GCSqGSIb3DQEB
+# AQUABIICACt4IKc1JlC15sR1qnyYXN9HX72LkPXRtA0UDx2tvHGBrlq/qd4bSPeF
+# dohnPVLJTF8h6m/lVp9VnSnAm58kwzwPe3ydSBofB+eXJCPyGav0BRASUNCWtN/p
+# vJ2Y9ZVz/6DiNuXBWiLCf9hdFd3nn209tFMhOAf4RZEwFnKq2yNY00esBOH3I+v+
+# /4MzmU17xnSezG/KHMmo2T0P+A7ELO282bagQLbvoif96OT+zr93qI80ThqQS06X
+# OZT6MTMEhmYQ/QbkSRW0N3VSQQk3WrySxbJczn5zc1CtcV++Q0ZOOl//SE/VxY5M
+# q03VYlZ05Qm5prDByEK1nEmeo+RbGORngBx5/SeLNb1Z9puyoHSfKgHMmWVnvuaB
+# lxg50HH7+Ha67VXUQBLrBT/x5BHCdixEcrCdwI1RIyjqES5xo6qbJRez0PGgAQN8
+# 6XXf8G+cdfXdGk/RR+S3GyJsCN1FrRNk9GY8EIzkMYkYjJQsxDN2kmgIa6QPZzbE
+# nwzVIyahN80d71R6q50aK93cRhuI5VgNpvMaK6Iewg5HF422WawcvRbOmzLqVuC1
+# mYZdZ98IB3FKlqUn4/RXhD9ugAmA2PdwBFmRDL0R4Vw1W0/jdBukk1uPxxKBGGhw
+# vk3tbWQ5gKN+z+lae8Z2tTOEKJy7Av9w6u+DCSIcUKzkHCVylhPA
 # SIG # End signature block
